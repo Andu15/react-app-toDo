@@ -1,0 +1,24 @@
+.CreateTodoButton {
+  background-image: linear-gradient(to right, #d451c5 5%,  #ef32d9 100%);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 50px;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  font-weight: bold;
+  color: #FAFAFA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 64px;
+  width: 64px;
+
+  transform: rotate(0);
+  transition: .5s ease;
+}
+
+.CreateTodoButton:hover {
+  transform: rotate(300deg);
+}
