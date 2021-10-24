@@ -1,0 +1,15 @@
+.greeting{
+  font-size: 24px;
+  text-align: center;
+  color:rgb(229, 189, 236);
+  margin-top: 50px;
+}
+
+.TodoCounter {
+  font-size: 24px;
+  text-align: center;
+  margin: 0;
+  padding: 48px;
+  font-weight: bold;
+  color:rgb(229, 189, 236);
+}
