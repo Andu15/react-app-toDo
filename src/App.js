@@ -5,13 +5,7 @@ import { TodoList } from './components/TodoList.js';
 import { TodoItem } from './components/TodoItem.js';
 import { CreateTodoButton } from './components/CreateTodoButton.js';
 import { useState, useEffect } from 'react';
-
-// const defaultTodos = [
-//   { text: 'Cortar cebolla', completed: true },
-//   { text: 'Tomar el cursso de intro a React', completed: false },
-//   { text: 'Llorar con la llorona', completed: false },
-//   { text: 'LALALALAA', completed: false },
-// ];
+import { Modal } from './components/Modal.js';
 
 function useLocalStorage(itemName, initialValue) {
   const [error, setError] = useState(false);
@@ -65,6 +59,7 @@ function App() {
     error,
   } = useLocalStorage('TODOS_V1', []);
   const [searchValue, setSearchValue] = useState('');
+  const [openModal, setOpenModal] = useState(false);
 
   const completedTodos = todos.filter(todo => !!todo.completed).length;
   const totalTodos = todos.length;
@@ -114,7 +109,14 @@ function App() {
           />
         ))}
       </TodoList >
-      <CreateTodoButton />
+
+      {!!openModal && (
+        <Modal>
+          <p>{searchedTodos[0]?.text}</p>
+        </Modal>
+      )}
+
+      <CreateTodoButton setOpenModal={setOpenModal}/>
     </>
   );
 }
